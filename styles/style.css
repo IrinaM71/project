@@ -42,6 +42,7 @@ header {
   border-bottom-right-radius: 8px;
   margin-left: 50px;
   display: flex;
+  justify-content: left;
   align-items: center;
 }
 
@@ -53,7 +54,7 @@ header {
 }
 
 .search button {
-  max-width: 150px;
+  max-width: 120px;
   width: 100%;
   font-size: 16px;
   font-weight: 400;
@@ -65,11 +66,12 @@ header {
 }
 
 .rot {
-  max-width: 42px;
+  max-width: 150px;
   width: 100%;
   display: flex;
   flex-direction: row;
-  align-items: enddownloded icons for;
+  align-items: center;
+  justify-content: end;
 }
 
 .searchRot {
