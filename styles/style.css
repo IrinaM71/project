@@ -5,9 +5,10 @@
 }
 
 body {
-  max-width: 1920px;
-  margin: auto;
+  max-width: 1512px;
   font-family: "Roboto";
+  display: flex;
+  flex-direction: column;
   color: #212121;
 }
 
@@ -21,12 +22,7 @@ button {
 header {
   max-width: 1512px;
   width: 100%;
-}
-
-main {
-  max-width: 1196px;
-  margin-left: 170px;
-}
+ 
 
 .nav-content {
   max-width: 1512px;
@@ -39,37 +35,35 @@ main {
 }
 
 .left {
-  max-width: 750.34px;
+  max-width: 550.34px;
   width: 100%;
+  border: 1px solid#D9D9D9;
+  border-radius: 8px;
   display: flex;
+  flex-direction: row;
   justify-content: start;
   align-items: center;
+  position: absolute;
+  left: 150px;
 }
 
 .search {
-  max-width: 560px;
+  max-width: 300px;
   width: 100%;
-  border: 1px solid#D9D9D9;
-  border-top-left-radius: 8px;
-  border-bottom-left-radius: 8px;
-  border-top-right-radius: 8px;
-  border-bottom-right-radius: 8px;
-  left: 130px;
+  background-color: #ffffff;
   display: flex;
-  justify-content: left;
   align-items: center;
-  position: absolute;
 }
 
-@media (max-width: 950px) {
-  .search {
-    top: 50px;
-    left: 0;
+@media (max-width: 750px) {
+  .left {
+    top: 60px;
+    left: 10px;
   }
 }
 
 .search img {
-  max-width: 32px;
+  max-width: 22px;
   width: 100%;
   height: 22px;
   margin-left: 10px;
@@ -82,7 +76,19 @@ main {
   font-weight: 400;
   color: #707070;
   border: none;
-  border-rightgit: 1px solid #d9d9d9;
+  border-right: 1px solid #d9d9d9;
+  background-color: #ffffff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+.mountainView {
+  max-width: 250px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  color: #000000;
+  border: none;
+  border-right: 1px solid #d9d9d9;
   background-color: #ffffff;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -95,8 +101,20 @@ main {
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
   background-color: red;
-  display: flex;
-  align-items: center;
+  padding-left: 10px;
+  padding-top: 10px;
+}
+
+@media (max-width: 350px) {
+  .search button {
+    border: none;
+  }
+  .searchRot {
+    display: none;
+  }
+  .mountainView {
+    display: none;
+  }
 }
 
 .right {
@@ -122,11 +140,10 @@ main {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  margin-left: 10px;
 }
 
 select {
-  max-width: 50px;
+  max-width: 55px;
   width: 100%;
   appearance: none;
   font-family: "Roboto";
@@ -142,7 +159,6 @@ select {
   width: 100%;
   font-size: 14px;
   font-weight: 500;
-  margin-left: -15px;
 }
 
 .right button {
@@ -155,28 +171,43 @@ select {
   font-size: 14px;
   font-weight: 500;
   color: #ffffff;
-  margin-left: 10px;
+}
+
+main {
+  max-width: 1196px;
+  display: flex;
+  justify-content: center;
+  margin-left: 150px;
 }
 
 .cap {
   max-width: 1196px;
   width: 100%;
   display: flex;
+  justify-content: start;
 }
 
 .cap img {
   max-width: 379px;
   width: 100%;
-  margin-top: 60px;
-  margin-left: 50px;
+  left: 850px;
+  position: absolute;
+  z-index: 2;
+  top: 100px;
 }
 
+@media (max-width: 950px) {
+  .cap img {
+    top: 350px;
+    left: 150px;
+  }
+}
 .h1 {
   max-width: 570px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 70px;
+  margin-top: 80px;
 }
 
 .h1 h1 {
@@ -200,4 +231,10 @@ select {
   text-decoration: none;
   padding: 7px 20px;
   margin-top: 40px;
+}
+
+@media (max-width: 950px) {
+  .h1 a {
+    display: none;
+  }
 }
