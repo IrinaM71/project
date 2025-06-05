@@ -2,7 +2,12 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
-  font-size: "Roboto";
+}
+
+body {
+  max-width: 1920px;
+  margin: auto;
+  font-family: "Roboto";
   color: #212121;
 }
 
@@ -49,10 +54,18 @@ main {
   border-bottom-left-radius: 8px;
   border-top-right-radius: 8px;
   border-bottom-right-radius: 8px;
-  margin-left: 50px;
+  left: 130px;
   display: flex;
   justify-content: left;
   align-items: center;
+  position: absolute;
+}
+
+@media (max-width: 950px) {
+  .search {
+    top: 50px;
+    left: 0;
+  }
 }
 
 .search img {
@@ -69,7 +82,7 @@ main {
   font-weight: 400;
   color: #707070;
   border: none;
-  border-left: 1px solid #d9d9d9;
+  border-rightgit: 1px solid #d9d9d9;
   background-color: #ffffff;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -167,7 +180,6 @@ select {
 }
 
 .h1 h1 {
-  font-family: "Roboto";
   font-size: 42px;
   font-weight: 700;
 }
@@ -179,7 +191,7 @@ select {
 }
 
 .h1 a {
-  max-width: 125.28px;
+  max-width: 130px;
   width: 100%;
   background-color: #00798a;
   color: #ffffff;
