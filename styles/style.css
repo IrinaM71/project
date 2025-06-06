@@ -2,14 +2,15 @@
   margin: 0px;
   padding: 0px;
   box-sizing: border-box;
+  font-family: "Roboto";
+  color: #212121;
 }
 
 body {
-  max-width: 1512px;
-  font-family: "Roboto";
+  max-width: 1920px;
   display: flex;
   flex-direction: column;
-  color: #212121;
+  align-items: center;
 }
 
 button {
@@ -20,10 +21,19 @@ button {
 }
 
 header {
-  max-width: 1512px;
+  max-width: 1196px;
   width: 100%;
- 
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+main {
+  max-width: 1196px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .nav-content {
   max-width: 1512px;
   width: 100%;
@@ -44,7 +54,7 @@ header {
   justify-content: start;
   align-items: center;
   position: absolute;
-  left: 150px;
+  left: 200px;
 }
 
 .search {
@@ -173,55 +183,45 @@ select {
   color: #ffffff;
 }
 
-main {
-  max-width: 1196px;
-  display: flex;
-  justify-content: center;
-  margin-left: 150px;
-}
-
 .cap {
   max-width: 1196px;
   width: 100%;
   display: flex;
-  justify-content: start;
 }
 
 .cap img {
   max-width: 379px;
   width: 100%;
-  left: 850px;
-  position: absolute;
-  z-index: 2;
-  top: 100px;
+  height: 269px;
 }
 
 @media (max-width: 950px) {
-  .cap img {
-    top: 350px;
-    left: 150px;
+  .cap {
+    display: flex;
+    flex-direction: column;
   }
 }
-.h1 {
+
+.offensive {
   max-width: 570px;
   width: 100%;
   display: flex;
   flex-direction: column;
-  margin-top: 80px;
 }
 
-.h1 h1 {
+.offensive h1 {
   font-size: 42px;
   font-weight: 700;
+  margin-top: 60px;
 }
 
-.h1 p {
+.offensive p {
   font-size: 16px;
   font-weight: 400;
   margin-top: 40px;
 }
 
-.h1 a {
+.offensive a {
   max-width: 130px;
   width: 100%;
   background-color: #00798a;
@@ -233,8 +233,104 @@ main {
   margin-top: 40px;
 }
 
-@media (max-width: 950px) {
-  .h1 a {
+.eventInfo {
+  max-width: 1196px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+.request {
+  max-width: 439.42px;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 12px;
+}
+
+.request h3 {
+  max-width: 232.42px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 20px;
+  font-weight: 600;
+  color: #00798a;
+  background-color: #dfececfe;
+  border-radius: 8px;
+  padding: 10px;
+}
+
+.eventInfo p {
+  font-size: 16px;
+  font-weight: 500;
+  color: #00798a;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 272px 272px 272px 272px;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.child {
+  max-width: 272px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.child h2 {
+  max-width: 220px;
+  width: 100%;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.child h5 {
+  font-size: 14px;
+  font-weight: 500;
+  color: #707070;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+}
+
+.date p {
+  font-size: 14px;
+  font-weight: 400;
+  color: #212121;
+}
+
+.check {
+  display: flex;
+  flex-direction: row;
+  gap: 19px;
+}
+
+.check span {
+  font-size: 16px;
+  font-weight: 400;
+  color: #212121;
+}
+
+.icons {
+  max-width: 20px;
+  width: 100%;
+}
+
+@media (max-width: 550px) {
+  .eventInfo p {
     display: none;
   }
 }
