@@ -273,9 +273,10 @@ select {
 }
 
 .grid {
+  max-width: 1196px;
+  width: 100%;
   display: grid;
-  grid-template-columns: 272px 272px 272px 272px;
-  flex-wrap: wrap;
+  grid-template-columns: repeat(auto-fit, minmax(272px, 1fr));
   gap: 25px;
   margin-top: 40px;
 }
