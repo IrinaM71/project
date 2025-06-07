@@ -578,3 +578,10 @@ select {
   color: #00798a;
   padding-bottom: 40px;
 }
+
+@media (max-width: 1100px) {
+  .friendships {
+    display: flex;
+    flex-direction: column;
+  }
+}
