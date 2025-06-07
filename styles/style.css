@@ -7,7 +7,7 @@
 }
 
 body {
-  max-width: 1920px;
+  max-width: 1512px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -334,18 +334,6 @@ select {
   max-width: 20px;
   width: 100%;
 }
-@media (max-width: 650px) {
-  .eventInfo p {
-    display: none;
-  }
-  .child_ad {
-    display: flex;
-    flex-direction: row;
-  }
-  .icons {
-    display: none;
-  }
-}
 
 .joinMeetup {
   max-width: 1192px;
@@ -583,5 +571,126 @@ select {
   .friendships {
     display: flex;
     flex-direction: column;
+  }
+}
+
+footer {
+  max-width: 1512px;
+  width: 100%;
+  background-color: #212121;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.end {
+  max-width: 1120px;
+  width: 100%;
+  border: none;
+  border-bottom: 1px solid #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.end h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #f6f7f8;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  padding-right: 40px;
+}
+
+.end button {
+  max-width: 119px;
+  width: 100%;
+  height: 44px;
+  background-color: #212121;
+  border: 2px solid #ffffff;
+  border-radius: 4px;
+  color: #ffffff;
+}
+
+.li li {
+  list-style-type: none;
+  font-size: 14px;
+  font-weight: 400;
+  color: #c5c4c4;
+  line-height: 20px;
+}
+
+.list {
+  max-width: 1120px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.list h4 {
+  font-size: 16px;
+  font-weight: 400;
+  color: #f6f7f8;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.li {
+  max-width: 374px;
+  width: 100%;
+}
+
+.apps {
+  max-width: 1120px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+h3 {
+  max-width: 1120px;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 400;
+  color: #f6f7f8;
+  padding-top: 30px;
+  padding-bottom: 20px;
+}
+
+.website {
+  display: flex;
+  gap: 30px;
+}
+
+.app {
+  display: flex;
+  gap: 20px;
+}
+
+.link {
+  max-width: 1120px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.link a {
+  font-size: 14px;
+  font-weight: 400;
+  color: #c5c4c4;
+  text-decoration: none;
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+@media (max-width: 520px) {
+  .app {
+    display: none;
+  }
+  .link a {
+    display: none;
   }
 }
