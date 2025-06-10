@@ -297,6 +297,12 @@ select {
   gap: 10px;
 }
 
+.double {
+  max-width: 272px;
+  width: 100%;
+  display: none;
+}
+
 .child h2 {
   max-width: 220px;
   width: 100%;
@@ -341,6 +347,27 @@ select {
 .iconsTicket {
   max-width: 20px;
   width: 100%;
+}
+
+.child_ad {
+  max-width: 604px;
+  width: 100%;
+  display: none;
+}
+
+@media (max-width: 900px) {
+  .child {
+    display: none;
+  }
+}
+.double {
+  display: flex;
+  flex-direction: row;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.check {
+  display: none;
 }
 
 .joinMeetup {
