@@ -297,20 +297,19 @@ select {
   gap: 10px;
 }
 
-.double {
+.png {
   max-width: 272px;
   width: 100%;
-  display: none;
 }
 
-.child h2 {
+.text_ad h2 {
   max-width: 220px;
   width: 100%;
   font-size: 20px;
   font-weight: 600;
 }
 
-.child h5 {
+.text_ad h5 {
   font-size: 14px;
   font-weight: 500;
   color: #707070;
@@ -349,25 +348,18 @@ select {
   width: 100%;
 }
 
-.child_ad {
-  max-width: 604px;
-  width: 100%;
-  display: none;
-}
-
 @media (max-width: 900px) {
   .child {
+    display: flex;
+    flex-direction: row;
+  }
+  .check {
     display: none;
   }
-}
-.double {
-  display: flex;
-  flex-direction: row;
-  margin-left: 10px;
-  margin-right: 10px;
-}
-.check {
-  display: none;
+  .png {
+    width: 20%;
+    height: 20%;
+  }
 }
 
 .joinMeetup {
@@ -500,6 +492,12 @@ select {
   font-weight: 600;
   padding-top: 20px;
   padding-bottom: 50px;
+}
+
+@media (max-width: 1045px) {
+  .miami {
+    display: none;
+  }
 }
 
 .instructions {
