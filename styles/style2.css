@@ -1,0 +1,142 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto";
+  color: #212121;
+}
+
+body {
+  max-width: 1512px;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+header2 {
+  max-width: 992px;
+  width: 100%;
+  margin-left: 158px;
+}
+
+button {
+  font-family: "Roboto";
+  font-size: 16px;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+.eventSort {
+  max-width: 1350px;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  margin-top: 100px;
+}
+
+.eventSort h2 {
+  font-size: 28px;
+  font-weight: 600;
+  padding-bottom: 30px;
+}
+
+.cityEvents_right {
+  max-width: 132px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.cityEvents_right span {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.cityEvents_left p {
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.searchEvents {
+  max-width: 64px;
+  width: 100%;
+  border: none;
+  border-bottom: 3px solid #00798a;
+  background-color: white;
+  margin-bottom: 10px;
+}
+
+.sortButton button {
+  max-width: 148px;
+  width: 100%;
+  height: 46px;
+  background-color: #f6f7f8;
+  border-radius: 40px;
+  border: none;
+  margin-right: 10px;
+}
+
+.sortButton img {
+  margin-left: 10px;
+}
+
+.map {
+  max-width: 350px;
+  width: 100%;
+  height: 285px;
+  position: absolute;
+  z-index: 1;
+  left: 1020px;
+  top: 203px;
+}
+.browse {
+  max-width: 172px;
+  width: 100%;
+  height: 40px;
+  border: 2px solid #00798a;
+  border-radius: 8px;
+  background-color: #ffffff;
+  font-size: 14px;
+  font-weight: 500;
+  position: absolute;
+  z-index: 2;
+  left: 1118px;
+  top: 312px;
+}
+
+.close {
+  width: 15px;
+  height: 15px;
+  border: 1.25px solid #00aecd;
+  position: absolute;
+  z-index: 2;
+  left: 1349px;
+  top: 214px;
+}
+
+.close img {
+  margin-bottom: 3px;
+}
+
+.selection {
+  max-width: 604px;
+  width: 100%;
+  padding-bottom: 50px;
+}
+
+@media (max-width: 860px) {
+  .map {
+    display: none;
+  }
+  .close {
+    display: none;
+  }
+  .browse {
+    display: none;
+  }
+
+  header2 {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

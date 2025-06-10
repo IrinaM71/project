@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="./styles/style.css" />
+    <link rel="stylesheet" href="./styles/style2.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -12,8 +13,8 @@
     />
     <title>Meetup</title>
   </head>
-  <body>
-    <div class="nav-content">
+    <body>
+      <div class="nav-content">
       <a href="index1.html"
         ><img class="logo" src="./icons/Link - Meetup logo.svg" alt=""
       /></a>
@@ -39,22 +40,44 @@
         <p>Log in</p>
         <button>Sing in</button>
       </div>
-    </div>
-    <footer>
-      <div class="end">
-        <h4>Create your Meetup group.</h4>
-        <button>Get Started</button>
-      </div>
-      <div class="list">
-        <div class="li">
-          <h4>Your Account</h4>
-          <ul>
-            <li>Sing up</li>
-            <li>Log in</li>
-            <li>Help</li>
-            <li>Become an Affiliate</li>
-          </ul>
+     </div>
+        <header2>
+      <div class="eventSort">
+        <h2 class="cityEvents_left">Events near New York, NY</h2>
+        <div class="cityEvents_right">
+          <span>Find eventsnear</span>
+          <p class="cityEvents_left">New York, NY</p>
         </div>
+      </div>
+      <button class="searchEvents">Events</button>
+      <div class="sortButton">
+        <button>Any type <img src="./icons/arrow.svg" alt="" /></button>
+        <button>Any distance <img src="./icons/arrow.svg" alt="" /></button>
+        <button>Any category <img src="./icons/arrow.svg" alt="" /></button>
+      </div>
+      <img class="map" src="./pngs/map.png" alt="" />
+      <button class="browse">
+        Browse in map <img src="./icons/expandMap.svg" alt="" />
+      </button>
+      <button class="close"><img src="./icons/close.svg" alt=""></button>
+      <form class="selection"></form>
+        
+
+    <footer>
+        <div class="end">
+            <h4>Create your Meetup group.</h4>
+            <button>Get Started</button>
+        </div>
+        <div class="list">
+            <div class="li">
+            <h4>Your Account</h4>
+            <ul>
+                <li>Sing up</li>
+                <li>Log in</li>
+                <li>Help</li>
+                <li>Become an Affiliate</li>
+            </ul>
+            </div>
 
         <div class="li">
           <h4>Discover</h4>
@@ -103,5 +126,7 @@
         <a href="">Help</a>
       </div>
     </footer>
-  </body>
+
+        <script src="./scripts/index.js"></script>
+    </body>
 </html>
