@@ -71,7 +71,7 @@ const eventsStore = [
     distance: 15,
   },
 ];
-const container = ge;
+
 document.getElementById("filterType").addEventListener("click", () => {
   const offlineEvents = eventsStore.filter((event) => event.type === "offline");
   document.getElementById("eventList").value = offlineEvents
@@ -97,5 +97,15 @@ document.getElementById("filterDistance").addEventListener("click", () => {
 
   document.getElementById("eventList").value = filtredEvents
     .map((event) => `${event.title} (${event.distance} km`)
+    .join("\n");
+
+  document.filteredEvents.sort((a, b) => a.date - b.date);
+  document.getElementById("eventList").value = filteredEvents
+    .map(
+      (event) =>
+        `${event.titel} - ${event.date.toLocaleDateString()} (${
+          event.distance
+        } km)`
+    )
     .join("\n");
 });
