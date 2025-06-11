@@ -66,18 +66,26 @@ button {
   margin-bottom: 10px;
 }
 
-.sortButton button {
+.sortButton select {
   max-width: 148px;
   width: 100%;
   height: 46px;
   background-color: #f6f7f8;
   border-radius: 40px;
   border: none;
+  font-size: 14px;
+  font-weight: 500;
+  padding-left: 10px;
   margin-right: 10px;
+  margin-bottom: 50px;
 }
 
-.sortButton img {
-  margin-left: 10px;
+.selection {
+  max-width: 604px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  border: none;
 }
 
 .map {

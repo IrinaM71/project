@@ -160,7 +160,7 @@ main {
   align-items: center;
 }
 
-select {
+.select select {
   max-width: 55px;
   width: 100%;
   appearance: none;
@@ -290,7 +290,6 @@ select {
 }
 
 .child {
-  max-width: 272px;
   width: 100%;
   display: flex;
   flex-direction: column;
@@ -303,7 +302,6 @@ select {
 }
 
 .text_ad h2 {
-  max-width: 220px;
   width: 100%;
   font-size: 20px;
   font-weight: 600;
@@ -424,7 +422,7 @@ select {
 
 @media (max-width: 970px) {
   .joinMeetup img {
-    top: 60px;
+    top: 30px;
   }
   .joinMeetup {
     justify-content: center;
@@ -625,7 +623,7 @@ footer {
 }
 
 .end {
-  max-width: 1512px;
+  max-width: 1120px;
   width: 100%;
   border: none;
   border-bottom: 1px solid #ffffff;
