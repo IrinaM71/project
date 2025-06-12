@@ -143,8 +143,10 @@ button {
   margin-bottom: 50px;
 }
 
-textarea {
-  border: none;
+.childIvent img {
+  max-width: 159px;
+  width: 100%;
+  height: 105px;
 }
 
 @media (max-width: 860px) {

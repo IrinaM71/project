@@ -72,36 +72,84 @@ const eventsStore = [
   },
 ];
 
+const filterType = document.getElementById("filterType");
+const filterDistance = document.getElementById("filterDistance");
+const filterCategory = document.getElementById("filterCategory");
+const eventList = document.getElementById("eventList");
+
+//document.getElementById("filterType").addEventListener("click", () => {
+//const filtred = filterEvents(eventsStore, { type: "online" });
+//displayEvents(filtred);
+//});
+
+//document.getElementById("filterType").addEventListener("click", () => {
+//const filtred = filterEvents(eventsStore, { type: "offline" });
+//displayEvents(filtred);
+//});
+//document.getElementById("filterDistance").addEventListener("click", () => {
+//const filtred = filterEvents(eventsStore, { distance: 30 });
+//displayEvents(filtred);
+//});
+//document.getElementById("filterCategory").addEventListener("click", () => {
+//const filtred = filterEvents(eventsStore, { category: "Technology" });
+//displayEvents(filtred);
+//});
+
+function fiilterEvents(events, filters) {
+  return events.filter((event) => {
+    (!filters.date || event.date >= new Date(filters.date)) &&
+      (!filters.type || event.type === filters.type) &&
+      (!filters.distance || event.distance <= filters.distance) &&
+      (!filters.category || event.category === filters.category);
+  });
+}
+
+function displayEvents(events) {
+  const eventList = document.getElementById("eventList");
+  eventList.innerHTML = "";
+
+  events.array.forEach((event) => {
+    const eventItem = document.createElement("div");
+    eventItem.classList.add("childEvent");
+
+    const eventImage = document.createElement("img");
+    eventImage.src = event.image;
+    eventImage.alt = event.title;
+
+    const eventText = document.createElement("div");
+    eventText.id = "eventText";
+    eventText.innerHTML = `
+    <h3>${event.title}</h3>
+    <p>${event.description}</p>
+    <p><strong>Date</strong>${event.date.toLocaleString()}</p>
+    <p><strong>Type</strong>{event.type}</p>
+    <strong>Category</strong>${event.category}</p>
+    <strong>Distance</strong>${event.distance} km</p>
+    `;
+
+    eventItem.appendChild(eventImage);
+    eventItem.appendChild(eventText);
+    eventItem.appendChild(eventItem);
+  });
+}
+
 document.getElementById("filterType").addEventListener("click", () => {
-  const offlineEvents = eventsStore.filter((event) => event.type === "offline");
-  document.getElementById("eventList").value = offlineEvents
-    .map((event) => event.title)
-    .join("\n");
+  const filtred = filterEvents(eventsStore, { type: "online" });
+  displayEvents(filtred);
 });
 
 document.getElementById("filterType").addEventListener("click", () => {
-  const onlineEvents = eventsStore.filter((event) => event.type === "online");
-  document.getElementById("eventList").value = onlineEvents
-    .map((event) => event.title)
-    .join("\n");
+  const filtred = filterEvents(eventsStore, { type: "offline" });
+  displayEvents(filtred);
 });
-
 document.getElementById("filterDistance").addEventListener("click", () => {
-  const maxDistance = parseInt(
-    document.getElementById("filterDistance").value,
-    10
-  );
-  const filtredEventsDistance = eventsStore.filter(
-    (event) => event.distance <= maxDistance
-  );
-
-  document.getElementById("eventList").value = filtredEventsDistance
-    .map((event) => `${event.title} (${event.distance} km`)
-    .join("\n");
+  const filtred = filterEvents(eventsStore, { distance: 30 });
+  displayEvents(filtred);
+});
+document.getElementById("filterCategory").addEventListener("click", () => {
+  const filtred = filterEvents(eventsStore, { category: "Technology" });
+  displayEvents(filtred);
 });
 
-const eventList = eventsStore.slice().sort((a, b) => a.date - b.date);
-const eventListText = eventList
-  .map((event) => `${event.date.toLocaleString()} - ${event.title}`)
-  .join("\n");
-document.getElementById("eventList").value = eventListText;
+//const filtredEvents = fiilterEvents(eventsStore, filters);
+//displayEvents(filtredEvents);
