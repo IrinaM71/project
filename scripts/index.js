@@ -91,21 +91,17 @@ document.getElementById("filterDistance").addEventListener("click", () => {
     document.getElementById("filterDistance").value,
     10
   );
-  const filtredEvents = eventsStore.filter(
+  const filtredEventsDistance = eventsStore.filter(
     (event) => event.distance <= maxDistance
   );
 
-  document.getElementById("eventList").value = filtredEvents
+  document.getElementById("eventList").value = filtredEventsDistance
     .map((event) => `${event.title} (${event.distance} km`)
     .join("\n");
-
-  document.filteredEvents.sort((a, b) => a.date - b.date);
-  document.getElementById("eventList").value = filteredEvents
-    .map(
-      (event) =>
-        `${event.titel} - ${event.date.toLocaleDateString()} (${
-          event.distance
-        } km)`
-    )
-    .join("\n");
 });
+
+const eventList = eventsStore.slice().sort((a, b) => a.date - b.date);
+const eventListText = eventList
+  .map((event) => `${event.date.toLocaleString()} - ${event.title}`)
+  .join("\n");
+document.getElementById("eventList").value = eventListText;
