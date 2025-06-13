@@ -132,7 +132,15 @@ button {
   padding-bottom: 50px;
 }
 
-.childIvent {
+.eventList {
+  max-width: 604px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.eventText {
+  max-width: 604px;
   width: 100%;
   display: flex;
   flex-direction: row;

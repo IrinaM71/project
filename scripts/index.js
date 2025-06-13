@@ -77,79 +77,40 @@ const filterDistance = document.getElementById("filterDistance");
 const filterCategory = document.getElementById("filterCategory");
 const eventList = document.getElementById("eventList");
 
-//document.getElementById("filterType").addEventListener("click", () => {
-//const filtred = filterEvents(eventsStore, { type: "online" });
-//displayEvents(filtred);
-//});
+document.addEventListener("DOMContentLoaded", () => {
+  const sortEvents = (key) => {
+    let sortedEvents = [...eventsStore];
 
-//document.getElementById("filterType").addEventListener("click", () => {
-//const filtred = filterEvents(eventsStore, { type: "offline" });
-//displayEvents(filtred);
-//});
-//document.getElementById("filterDistance").addEventListener("click", () => {
-//const filtred = filterEvents(eventsStore, { distance: 30 });
-//displayEvents(filtred);
-//});
-//document.getElementById("filterCategory").addEventListener("click", () => {
-//const filtred = filterEvents(eventsStore, { category: "Technology" });
-//displayEvents(filtred);
-//});
+    if (key === "date") {
+      sortedEvents.sort((a, b) => a.date - b.date);
+    } else if (key === "distance") {
+      sortedEvents.sort((a, b) => a.distance - b.distance);
+    } else if (key === "category") {
+      sortedEvents.sort((a, b) => a.category.localeCompare(b.category));
+    }
 
-function fiilterEvents(events, filters) {
-  return events.filter((event) => {
-    (!filters.date || event.date >= new Date(filters.date)) &&
-      (!filters.type || event.type === filters.type) &&
-      (!filters.distance || event.distance <= filters.distance) &&
-      (!filters.category || event.category === filters.category);
-  });
-}
+    renderEvents(sortedEvents);
+  };
+  const renderEvents = (events) => {
+    eventList.innerHTML = "";
+    events.forEach((event) => {
+      const eventElement = document.createElement("div");
+      eventElement.innerHTML = `
+        <img src="${event.image}" alt="${event.title}" style="width:160px;">;
+        <h3>${event.title}</h3>
+        <p>${event.description}</p>
+        <p><strong>Date: </strong>${event.date.toDateString()}</p>
+        <p><strong>Type: </strong>${event.type}</p>
+        <p><strong>Category: </strong>${event.category}</p>
+        <p><strong>Distance</strong>${event.distance} km</p>
+      `;
+      eventList.appendChild(eventElement);
+    });
+  };
 
-function displayEvents(events) {
-  const eventList = document.getElementById("eventList");
-  eventList.innerHTML = "";
+  filterType.addEventListener("change", () => sortEvents("date"));
+  filterDistance.addEventListener("change", () => sortEvents("distance"));
+  filterCategory.addEventListener("change", () => sortEvents("category"));
 
-  events.array.forEach((event) => {
-    const eventItem = document.createElement("div");
-    eventItem.classList.add("childEvent");
-
-    const eventImage = document.createElement("img");
-    eventImage.src = event.image;
-    eventImage.alt = event.title;
-
-    const eventText = document.createElement("div");
-    eventText.id = "eventText";
-    eventText.innerHTML = `
-    <h3>${event.title}</h3>
-    <p>${event.description}</p>
-    <p><strong>Date</strong>${event.date.toLocaleString()}</p>
-    <p><strong>Type</strong>{event.type}</p>
-    <strong>Category</strong>${event.category}</p>
-    <strong>Distance</strong>${event.distance} km</p>
-    `;
-
-    eventItem.appendChild(eventImage);
-    eventItem.appendChild(eventText);
-    eventItem.appendChild(eventItem);
-  });
-}
-
-document.getElementById("filterType").addEventListener("click", () => {
-  const filtred = filterEvents(eventsStore, { type: "online" });
-  displayEvents(filtred);
+  renderEvents(eventsStore);
 });
-
-document.getElementById("filterType").addEventListener("click", () => {
-  const filtred = filterEvents(eventsStore, { type: "offline" });
-  displayEvents(filtred);
-});
-document.getElementById("filterDistance").addEventListener("click", () => {
-  const filtred = filterEvents(eventsStore, { distance: 30 });
-  displayEvents(filtred);
-});
-document.getElementById("filterCategory").addEventListener("click", () => {
-  const filtred = filterEvents(eventsStore, { category: "Technology" });
-  displayEvents(filtred);
-});
-
-//const filtredEvents = fiilterEvents(eventsStore, filters);
-//displayEvents(filtredEvents);
